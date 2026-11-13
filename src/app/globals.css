@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0d0e;
+  --surface: #131618;
+  --surface-2: #1b1f22;
+  --line: #272c30;
+  --ink: #e8ebec;
+  --ink-2: #a3abb0;
+  --ink-3: #6f787e;
+  --accent: #c8f04a;
+  --accent-ink: #141a02;
+  --knowledge: #4fd69c;
+  --report: #f0b84a;
+  --note: #6db8f2;
+  --danger: #f2766b;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f6f3;
+  --surface: #ffffff;
+  --surface-2: #eeeeea;
+  --line: #dcdcd6;
+  --ink: #15181a;
+  --ink-2: #4f575c;
+  --ink-3: #6e767b;
+  --accent: #4d6b00;
+  --accent-ink: #ffffff;
+  --knowledge: #0d7a50;
+  --report: #96610a;
+  --note: #1d6aa8;
+  --danger: #bd3226;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-knowledge: var(--knowledge);
+  --color-report: var(--report);
+  --color-note: var(--note);
+  --color-danger: var(--danger);
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.field {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.875rem;
+}
+.field::placeholder {
+  color: var(--ink-3);
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  50% {
+    opacity: 0.35;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot {
+    animation: none;
+  }
+}
+
+.markdown {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.markdown > * + * {
+  margin-top: 0.8em;
+}
+.markdown h1 {
+  font-size: 1.35rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+.markdown h2 {
+  font-size: 1.1rem;
+  font-weight: 650;
+  margin-top: 1.4em;
+}
+.markdown h3 {
+  font-size: 0.95rem;
+  font-weight: 650;
+  margin-top: 1.2em;
+}
+.markdown ul {
+  list-style: disc;
+  padding-left: 1.3em;
+}
+.markdown ol {
+  list-style: decimal;
+  padding-left: 1.3em;
+}
+.markdown li + li {
+  margin-top: 0.3em;
+}
+.markdown a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-2);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+.markdown pre {
+  background: var(--surface-2);
+  border-radius: 6px;
+  padding: 0.8em;
+  overflow-x: auto;
+}
+.markdown pre code {
+  background: none;
+  padding: 0;
+}
+.markdown blockquote {
+  border-left: 3px solid var(--line);
+  padding-left: 0.9em;
+  color: var(--ink-2);
+}
+.markdown table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.markdown th,
+.markdown td {
+  border: 1px solid var(--line);
+  padding: 0.35em 0.6em;
+  text-align: left;
+}
+.markdown th {
+  background: var(--surface-2);
+  font-weight: 600;
+}
