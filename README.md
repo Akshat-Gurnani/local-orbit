@@ -7,6 +7,10 @@
 
 Claude Desktop, Claude Code, Cursor, Codex, Antigravity, the Gemini app, and n8n all read from and write to one SQLite database, so you stop being the copy-paste bridge between them. A dashboard shows what every agent is doing and lets you send instructions to them.
 
+[![Watch the 25-second demo](docs/demo.jpg)](docs/demo.mp4)
+
+*Click the image to watch the 25-second demo.*
+
 ![Live dashboard showing agent runs](docs/screenshots/live.png)
 
 ## What it does
